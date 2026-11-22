@@ -26,15 +26,9 @@ export const CoverA: React.FC = () => (
     </div>
 
     {/* headline */}
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 150, textAlign: "center", transform: "rotate(-2deg)" }}>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 80, textAlign: "center", transform: "rotate(-2deg)" }}>
       <div style={{ ...stroke(18), fontSize: 128, color: "#fff" }}>吉隆坡被</div>
       <div style={{ ...stroke(20), fontSize: 138, color: C.yellow, marginTop: 4 }}>皮卡丘淹没了！</div>
-    </div>
-    {/* chips */}
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 48, display: "flex", justifyContent: "center", gap: 24 }}>
-      {["集齐8只宝可梦", "道馆徽章到手"].map((t) => (
-        <div key={t} style={{ fontFamily: ZH, fontSize: 46, color: C.dark, background: "#fff", border: `6px solid ${C.yellow}`, borderRadius: 40, padding: "4px 30px" }}>{t}</div>
-      ))}
     </div>
   </AbsoluteFill>
 );
