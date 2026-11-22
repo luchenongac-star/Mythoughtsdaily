@@ -2,7 +2,7 @@ import React from "react";
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { C, FONT_BODY, outlined } from "../theme";
 
-export const Caption: React.FC<{ text: string; sub?: string; delay?: number; bottom?: number }> = ({ text, sub, delay = 6, bottom = 330 }) => {
+export const Caption: React.FC<{ text: string; sub?: string; delay?: number; bottom?: number }> = ({ text, sub, delay = 3, bottom = 330 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({ frame: frame - delay, fps, config: { damping: 12, stiffness: 170, mass: 0.7 } });
@@ -28,7 +28,7 @@ export const Caption: React.FC<{ text: string; sub?: string; delay?: number; bot
 export const DexBadge: React.FC<{ name: string; index: number; total: number }> = ({ name, index, total }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const s = spring({ frame: frame - 12, fps, config: { damping: 13, stiffness: 150 } });
+  const s = spring({ frame: frame - 7, fps, config: { damping: 13, stiffness: 170 } });
   return (
     <div
       style={{

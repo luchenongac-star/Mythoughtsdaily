@@ -25,9 +25,6 @@ export const Hud: React.FC<{ km?: number; prevKm: number }> = ({ km, prevKm }) =
         }}
       >
         <Pokeball size={34} />
-        <span style={{ fontFamily: FONT_DISPLAY, fontSize: 34, color: C.yellow, letterSpacing: 1 }}>
-          DAY {String(EPISODE.day).padStart(2, "0")}
-        </span>
         <span style={{ fontFamily: FONT_BODY, fontWeight: 800, fontSize: 26, color: "#fff", opacity: 0.9 }}>
           {EPISODE.where}
         </span>
