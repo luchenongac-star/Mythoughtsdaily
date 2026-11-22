@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-run-vlog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts DayVlog out/day-01.mp4 --codec=h264 --crf=20",
+    "stills": "node scripts/stills.mjs out/stills",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/lilita-one": "^5.3.0",
+    "@fontsource/nunito": "^5.3.0",
+    "@remotion/bundler": "^4.0.250",
+    "@remotion/cli": "^4.0.250",
+    "@remotion/media-utils": "^4.0.250",
+    "@remotion/renderer": "^4.0.250",
+    "@remotion/transitions": "^4.0.250",
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.250",
+    "typescript": "^5.5.4"
+  }
+}

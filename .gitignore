@@ -1,0 +1,4 @@
+node_modules/
+out/
+# Originals (un-blurred bystander faces) stay local; only public/photos (blurred) is committed.
+raw/
