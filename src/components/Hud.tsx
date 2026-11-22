@@ -7,7 +7,7 @@ import { Pokeball } from "./Pokeball";
 const LABELS = ["START", "1", "2", "3", "4", "FINISH"];
 
 /** Top bar: episode tag + route progress with a Pokéball marker. */
-export const Hud: React.FC<{ km?: number; prevKm: number }> = ({ km, prevKm }) => {
+export const Hud: React.FC<{ km?: number; prevKm: number; hideRoute?: boolean }> = ({ km, prevKm, hideRoute }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const trackW = 900;
@@ -29,7 +29,7 @@ export const Hud: React.FC<{ km?: number; prevKm: number }> = ({ km, prevKm }) =
           {EPISODE.where}
         </span>
       </div>
-      {km !== undefined || prevKm > 0 ? (
+      {!hideRoute && (km !== undefined || prevKm > 0) ? (
         <div style={{ position: "absolute", top: 196, left: 0, right: 0, height: 120 }}>
           <div style={{ position: "absolute", left: x0, top: 26, width: trackW, height: 14, borderRadius: 8, background: "rgba(255,255,255,.35)" }} />
           <div style={{ position: "absolute", left: x0, top: 26, width: trackW * pct, height: 14, borderRadius: 8, background: C.yellow, boxShadow: "0 0 14px rgba(255,203,5,.9)" }} />

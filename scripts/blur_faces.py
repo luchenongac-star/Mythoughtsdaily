@@ -4,8 +4,11 @@ HERE = os.path.dirname(__file__)
 RAW, OUT = os.path.join(HERE, "..", "raw"), os.path.join(HERE, "..", "public", "photos")
 boxes = json.load(open(os.path.join(HERE, "blur_boxes.json")))
 os.makedirs(OUT, exist_ok=True)
+SKIP = {"18-finish-me.jpg"}  # cut from the edit
 for p in sorted(glob.glob(os.path.join(RAW, "*.jpg"))):
-    n = os.path.basename(p); img = cv2.imread(p); H, W = img.shape[:2]
+    n = os.path.basename(p)
+    if n in SKIP: continue
+    img = cv2.imread(p); H, W = img.shape[:2]
     for x, y, w, h in boxes.get(n, []):
         pad = int(max(w, h) * 0.2)
         x0, y0, x1, y1 = max(0, x-pad), max(0, y-pad), min(W, x+w+pad), min(H, y+h+pad)

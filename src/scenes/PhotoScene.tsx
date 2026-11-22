@@ -57,7 +57,7 @@ export const PhotoScene: React.FC<{ scene: P }> = ({ scene }) => {
           <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(10,12,30,.5) 0%, rgba(10,12,30,0) 20%, rgba(10,12,30,0) 70%, rgba(10,12,30,.6) 100%)" }} />
         </>
       )}
-      <Hud km={scene.km} prevKm={scene.prevKm} />
+      <Hud km={scene.km} prevKm={scene.prevKm} hideRoute={scene.hideRoute} />
       {scene.dex ? <DexBadge name={scene.dex} index={scene.dexIndex} total={scene.dexTotal} /> : null}
       <Caption text={scene.caption} sub={scene.sub} />
     </AbsoluteFill>

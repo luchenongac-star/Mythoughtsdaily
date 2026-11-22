@@ -24,7 +24,7 @@ STORY = [
     ("tents",       "e97ca404", "IMG_0619"),
     ("km4",         "5dc2000c", "IMG_0623"),
     ("finish-wide", "d0854af9", "IMG_0626"),
-    ("finish-me",   "6bafab70", "IMG_0629"),
+    ("finish-me",   "6bafab70", "2da861f9"),  # cut from the edit
     ("card",        "52e5b4e7", "IMG_0628"),
     ("inflatable",  "635da08d", "IMG_0631"),
     ("me-inflatable","3b9ec6a4","IMG_9164"),
@@ -32,6 +32,7 @@ STORY = [
     ("cards",       "c2f0dff9", "IMG_0651"),
     ("medal",       "4cc2508a", "IMG_0652"),
     ("plush",       "08a11a65", "IMG_0653"),
+    ("end-me",      "28c603bd", "IMG_9168"),   # closing scene
 ]
 
 os.makedirs(OUT, exist_ok=True)
