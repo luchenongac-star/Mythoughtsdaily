@@ -1,14 +1,15 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import "./fonts";
 import { EPISODE, TIMELINE } from "./data/day01";
 import { ChapterScene } from "./scenes/ChapterScene";
 import { IntroScene } from "./scenes/IntroScene";
-import { OutroScene } from "./scenes/OutroScene";
 import { PhotoScene } from "./scenes/PhotoScene";
 
 export const DayVlog: React.FC = () => {
   const { durationInFrames, fps } = useVideoConfig();
+  const frame = useCurrentFrame();
+  const endFade = interpolate(frame, [durationInFrames - 12, durationInFrames - 1], [0, 1], { extrapolateLeft: "clamp" });
   return (
     <AbsoluteFill style={{ backgroundColor: "#14172B" }}>
       <Audio
@@ -17,9 +18,10 @@ export const DayVlog: React.FC = () => {
       />
       {TIMELINE.placed.map((s) => (
         <Sequence key={s.index} from={s.start} durationInFrames={s.dur} premountFor={fps}>
-          {s.type === "intro" ? <IntroScene /> : s.type === "chapter" ? <ChapterScene scene={s} /> : s.type === "outro" ? <OutroScene /> : <PhotoScene scene={s} />}
+          {s.type === "intro" ? <IntroScene /> : s.type === "chapter" ? <ChapterScene scene={s} /> : <PhotoScene scene={s} />}
         </Sequence>
       ))}
+      <AbsoluteFill style={{ backgroundColor: "#000", opacity: endFade }} />
     </AbsoluteFill>
   );
 };

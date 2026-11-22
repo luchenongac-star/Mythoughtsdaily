@@ -30,8 +30,7 @@ type PhotoRaw = {
 };
 type ChapterRaw = { type: "chapter"; beats: number; n: number; title: string; sub: string };
 type IntroRaw = { type: "intro"; beats: number };
-type OutroRaw = { type: "outro"; beats: number };
-export type Raw = PhotoRaw | ChapterRaw | IntroRaw | OutroRaw;
+export type Raw = PhotoRaw | ChapterRaw | IntroRaw;
 
 const P = (
   file: string,
@@ -80,7 +79,6 @@ export const SCRIPT: Raw[] = [
   P("24-medal.jpg", 1013, 1800, 6, "Gym Badge earned!", { sub: "Medal + badge + lanyard", focus: [0.5, 0.55] }),
   P("25-plush.jpg", 1013, 1800, 5, "Finisher plush duo", { sub: "Run tee edition", focus: [0.5, 0.5] }),
 
-  { type: "outro", beats: 12 },
 ];
 
 // ---- timeline builder ----
